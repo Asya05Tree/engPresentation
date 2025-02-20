@@ -5,6 +5,7 @@
     --text-color: #2d3436;
     --background-color: #f5f6fa;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
 }
 
 body {
@@ -13,13 +14,13 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding: 2rem;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+    max-width: 1400px;
+    margin: 10px auto;
+    padding: 3rem;
 }
 
 .language-switch {
