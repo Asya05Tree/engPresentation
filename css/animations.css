@@ -1,0 +1,152 @@
+/* Base animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Apply animations to elements */
+.cyber-grid {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.cyber-card {
+    opacity: 0;
+    animation: slideInFromBottom 0.6s ease forwards;
+}
+
+/* Stagger the cards animation */
+.cyber-card:nth-child(2) { animation-delay: 0.1s; }
+.cyber-card:nth-child(3) { animation-delay: 0.2s; }
+.cyber-card:nth-child(4) { animation-delay: 0.3s; }
+.cyber-card:nth-child(n+5) { animation-delay: 0.4s; }
+
+/* Enhanced hover effects */
+.cyber-card:hover .card-image {
+    transform: scale(1.1) translateY(-5px);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cyber-card:hover .card-content {
+    transform: translateY(-5px);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Detail view animations */
+.detail-view {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.detail-view.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.detail-image {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: scaleIn 0.6s ease forwards;
+}
+
+.detail-content {
+    opacity: 0;
+    animation: slideInFromRight 0.6s ease 0.2s forwards;
+}
+
+/* Tab content animations */
+.tab-content {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.tab-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button animations */
+.tab-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.tab-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.tab-button:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+.back-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.back-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.back-button:hover::before {
+    left: 100%;
+}
