@@ -22,148 +22,18 @@
             <span lang="uk">Види кіберзлочинів</span>
         </h1>
 
-        <div class="cyber-grid" id="crimeList">
-            <!-- Malware -->
-            <div class="cyber-card" data-aos="fade-up" onclick="showDetail(0)">
-                <img src="/assets/images/malware.jpg" alt="Malware" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title" lang="en">Malware Distribution</h3>
-                    <h3 class="card-title" lang="uk">Поширення шкідливого ПЗ</h3>
-                    <p class="card-description" lang="en">Creation and distribution of malicious software</p>
-                    <p class="card-description" lang="uk">Створення та розповсюдження шкідливих програм</p>
-                    <div class="law-reference">
-                        <p lang="en">Article 361-1 of CCU</p>
-                        <p lang="uk">Стаття 361-1 ККУ</p>
-                    </div>
-                </div>
-            </div>
+        <!-- Контейнер для карток злочинів -->
+        <div class="cyber-grid" id="crimeList"></div>
 
-            <!-- DDoS -->
-            <div class="cyber-card" data-aos="fade-up" data-aos-delay="100" onclick="showDetail(1)">
-                <img src="/assets/images/ddos.jpg" alt="DDoS" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title" lang="en">DDoS Attacks</h3>
-                    <h3 class="card-title" lang="uk">DDoS атаки</h3>
-                    <p class="card-description" lang="en">Distributed denial-of-service attacks on information systems</p>
-                    <p class="card-description" lang="uk">Розподілені атаки на відмову в обслуговуванні інформаційних систем</p>
-                    <div class="law-reference">
-                        <p lang="en">Article 361 of CCU</p>
-                        <p lang="uk">Стаття 361 ККУ</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Phishing -->
-            <div class="cyber-card" data-aos="fade-up" data-aos-delay="200" onclick="showDetail(2)">
-                <img src="/assets/images/phishing.jpg" alt="Phishing" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title" lang="en">Phishing</h3>
-                    <h3 class="card-title" lang="uk">Фішинг</h3>
-                    <p class="card-description" lang="en">Fraudulent attempts to obtain sensitive information</p>
-                    <p class="card-description" lang="uk">Шахрайські спроби отримання конфіденційної інформації</p>
-                    <div class="law-reference">
-                        <p lang="en">Article 190 of CCU</p>
-                        <p lang="uk">Стаття 190 ККУ</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Theft -->
-            <div class="cyber-card" data-aos="fade-up" data-aos-delay="300" onclick="showDetail(3)">
-                <img src="/assets/images/data-theft.jpg" alt="Data Theft" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title" lang="en">Data Theft</h3>
-                    <h3 class="card-title" lang="uk">Крадіжка даних</h3>
-                    <p class="card-description" lang="en">Unauthorized collection and theft of personal data</p>
-                    <p class="card-description" lang="uk">Несанкціонований збір та викрадення персональних даних</p>
-                    <div class="law-reference">
-                        <p lang="en">Article 361-2 of CCU</p>
-                        <p lang="uk">Стаття 361-2 ККУ</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cryptojacking -->
-            <div class="cyber-card" data-aos="fade-up" data-aos-delay="400" onclick="showDetail(4)">
-                <img src="/assets/images/cryptojacking.jpg" alt="Cryptojacking" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title" lang="en">Cryptojacking</h3>
-                    <h3 class="card-title" lang="uk">Криптоджекінг</h3>
-                    <p class="card-description" lang="en">Unauthorized use of computing resources for cryptocurrency mining</p>
-                    <p class="card-description" lang="uk">Несанкціоноване використання обчислювальних ресурсів для майнінгу криптовалют</p>
-                    <div class="law-reference">
-                        <p lang="en">Article 361 of CCU</p>
-                        <p lang="uk">Стаття 361 ККУ</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ransomware -->
-            <div class="cyber-card" data-aos="fade-up" data-aos-delay="500" onclick="showDetail(5)">
-                <img src="/assets/images/ransomware.jpg" alt="Ransomware" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title" lang="en">Ransomware</h3>
-                    <h3 class="card-title" lang="uk">Програми-вимагачі</h3>
-                    <p class="card-description" lang="en">Malicious software that encrypts data and demands ransom</p>
-                    <p class="card-description" lang="uk">Шкідливе ПЗ, що шифрує дані та вимагає викуп</p>
-                    <div class="law-reference">
-                        <p lang="en">Articles 361-1, 189 of CCU</p>
-                        <p lang="uk">Статті 361-1, 189 ККУ</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Identity Theft -->
-            <div class="cyber-card" data-aos="fade-up" data-aos-delay="600" onclick="showDetail(6)">
-                <img src="/assets/images/identity-theft.jpg" alt="Identity Theft" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title" lang="en">Identity Theft</h3>
-                    <h3 class="card-title" lang="uk">Крадіжка особистості</h3>
-                    <p class="card-description" lang="en">Stealing and using someone's personal identity</p>
-                    <p class="card-description" lang="uk">Викрадення та використання персональної ідентичності</p>
-                    <div class="law-reference">
-                        <p lang="en">Articles 190, 362 of CCU</p>
-                        <p lang="uk">Статті 190, 362 ККУ</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Engineering -->
-            <div class="cyber-card" data-aos="fade-up" data-aos-delay="700" onclick="showDetail(7)">
-                <img src="/assets/images/social-engineering.jpg" alt="Social Engineering" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title" lang="en">Social Engineering</h3>
-                    <h3 class="card-title" lang="uk">Соціальна інженерія</h3>
-                    <p class="card-description" lang="en">Psychological manipulation for information gathering</p>
-                    <p class="card-description" lang="uk">Психологічні маніпуляції для збору інформації</p>
-                    <div class="law-reference">
-                        <p lang="en">Article 190 of CCU</p>
-                        <p lang="uk">Стаття 190 ККУ</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <!-- Контейнер для детального перегляду -->
         <div class="detail-view" id="detailView">
             <button class="back-button" onclick="showList()">
                 <span lang="en">← Back to List</span>
                 <span lang="uk">← Назад до списку</span>
             </button>
             
-            <div class="cyber-tabs">
-                <button class="tab-button active" data-tab="first" onclick="changeTab('first')">
-                    <span lang="en">First Attacks</span>
-                    <span lang="uk">Перші атаки</span>
-                </button>
-                <button class="tab-button" data-tab="ukraine-first" onclick="changeTab('ukraine-first')">
-                    <span lang="en">First Attacks in Ukraine</span>
-                    <span lang="uk">Перші атаки в Україні</span>
-                </button>
-                <button class="tab-button" data-tab="ukraine-current" onclick="changeTab('ukraine-current')">
-                    <span lang="en">Current Attacks on Ukraine</span>
-                    <span lang="uk">Сучасні атаки на Україну</span>
-                </button>
-            </div>
+            <!-- Контейнер для табів -->
+            <div class="cyber-tabs"></div>
 
             <div class="detail-container">
                 <img src="" alt="" class="detail-image" id="detailImage">
