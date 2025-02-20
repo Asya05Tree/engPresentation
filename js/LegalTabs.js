@@ -6,21 +6,19 @@ const LegalTabs = () => {
 
   const legalInfo = [
     {
-      title: "Кримінальний кодекс України",
-      content: `Стаття 361. Несанкціоновані втручання в роботу комп'ютерів, автоматизованих систем, комп'ютерних мереж чи мереж електрозв'язку...
+      title: "Criminal Code of Ukraine",
+      content: `Article 361. Unauthorized interference in the operation of information (automated), electronic communication, information and communication systems, electronic communication networks
       
-      Стаття 361-1. Створення з метою використання, розповсюдження або збуту шкідливих програмних засобів чи технічних пристроїв...
+      Article 361-1. Creation for the purpose of unlawful use, distribution or sale of harmful software or hardware, as well as their distribution or sale
       
-      Стаття 361-2. Несанкціоновані збут або розповсюдження інформації з обмеженим доступом...`
+      Article 361-2. Unauthorized sale or distribution of information with restricted access stored in electronic computers, automated systems, computer networks or on media of such information
+      
+      Article 362. Unauthorized actions with information processed in electronic computers, automated systems, computer networks or stored on media of such information, committed by a person who has the right to access it
+      
+      Article 363. Violation of the rules for the operation of electronic computers, automated systems, computer networks or telecommunication networks or the procedure or rules for the protection of information processed in them
+      
+      Article 363-1. Obstruction of the operation of electronic computers, automated systems, computer networks or telecommunications networks by mass distribution of telecommunications messages`
     },
-    {
-      title: "Закон України 'Про основні засади забезпечення кібербезпеки України'",
-      content: "Цей Закон визначає правові та організаційні основи забезпечення захисту життєво важливих інтересів людини і громадянина, суспільства та держави, національних інтересів України у кіберпросторі..."
-    },
-    {
-      title: "Закон України 'Про захист інформації в інформаційно-телекомунікаційних системах'",
-      content: "Цей Закон регулює відносини у сфері захисту інформації в інформаційних, телекомунікаційних та інформаційно-телекомунікаційних системах..."
-    }
   ];
 
   return (
@@ -39,7 +37,8 @@ const LegalTabs = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      
+      <a href = "https://zakon.rada.gov.ua/laws/show/2341-14#Text"> zakon.rada.gov.ua</a>
+      <a href = "https://sherloc.unodc.org/cld/uploads/res/document/ukr/2001/criminal-code-of-the-republic-of-ukraine-en_html/Ukraine_Criminal_Code_as_of_2010_EN.pdf">criminal-code-of-the-republic-of-ukraine-en</a>
       <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isExpanded ? 'max-h-[800px]' : 'max-h-0'}`}>
         <div className="bg-white border border-t-0 rounded-b-lg p-4">
           <div className="flex border-b">
