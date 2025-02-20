@@ -1,3 +1,6 @@
+import { createRoot } from 'react-dom/client';
+import LegalTabs from './LegalTabs';
+
 function createCard(id, data) {
     const card = document.createElement('div');
     card.className = 'cyber-card';
@@ -69,6 +72,10 @@ function showList() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const crimeList = document.getElementById('crimeList');
+    const legalTabsRoot = document.getElementById('legalTabsRoot');
+    if (legalTabsRoot) {
+        createRoot(legalTabsRoot).render(<LegalTabs />);
+    }
     Object.entries(content).forEach(([id, data]) => {
         crimeList.appendChild(createCard(id, data));
     });
