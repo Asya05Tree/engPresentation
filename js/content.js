@@ -1,6 +1,18 @@
 const content = {
     malware: {
         image: '/assets/images/malware.jpg',
+        card: {
+            en: {
+                title: "Malware Distribution",
+                description: "Creation and distribution of malicious software",
+                law: "Article 361-1 of CCU: Creation of malicious software for the purpose of its use, distribution or sale"
+            },
+            uk: {
+                title: "Поширення шкідливого ПЗ",
+                description: "Створення та розповсюдження шкідливих програм",
+                law: "Стаття 361-1 ККУ: Створення шкідливих програмних засобів з метою їх використання, розповсюдження або збуту"
+            }
+        },
         first: {
             en: {
                 title: "First Malware Attacks",
