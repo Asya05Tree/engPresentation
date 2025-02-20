@@ -5,23 +5,39 @@ let currentCrime = 0;
 let currentTab = 'first';
 
 function showDetail(index) {
-    currentCrime = index;
-    document.getElementById('crimeList').style.display = 'none';
-    document.getElementById('detailView').style.display = 'block';
-    updateDetailContent();
-    window.scrollTo(0, 0);
+    const crimeList = document.getElementById('crimeList');
+    const detailView = document.getElementById('detailView');
+    crimeList.style.opacity = '0';
+    crimeList.style.transform = 'translateY(-20px)';
+    
+    setTimeout(() => {
+        crimeList.style.display = 'none';
+        detailView.style.display = 'block';
+    
+        detailView.offsetHeight;
+        detailView.classList.add('active');
+        currentCrime = index;
+        updateDetailContent();
+    }, 300);
 }
 
 function showList() {
-    document.getElementById('crimeList').style.display = 'grid';
-    document.getElementById('detailView').style.display = 'none';
+    const crimeList = document.getElementById('crimeList');
+    const detailView = document.getElementById('detailView');
+    detailView.classList.remove('active');
+    
+    setTimeout(() => {
+        detailView.style.display = 'none';
+        crimeList.style.display = 'grid';
+        crimeList.offsetHeight;
+        crimeList.style.opacity = '1';
+        crimeList.style.transform = 'translateY(0)';
+    }, 300);
 }
 
 function changeTab(tab) {
     currentTab = tab;
     updateDetailContent();
-    
-    // Update active tab styling
     document.querySelectorAll('.tab-button').forEach(button => {
         button.classList.remove('active');
     });
