@@ -77,17 +77,3 @@
 .cyber-card:hover .card-description {
     transform: translateX(5px);
 }
-
-.law-reference {
-    margin-top: 1rem;
-    padding: 1rem;
-    background: rgba(9, 132, 227, 0.1);
-    border-left: 4px solid var(--secondary-color);
-    border-radius: 0 8px 8px 0;
-    transition: all var(--transition-speed) ease;
-}
-
-.cyber-card:hover .law-reference {
-    background: rgba(9, 132, 227, 0.2);
-    transform: translateX(5px);
-}
