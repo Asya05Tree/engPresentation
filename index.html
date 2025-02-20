@@ -12,30 +12,13 @@
     <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-    <button class="language-switch" onclick="toggleLanguage()">
-        <span lang="en">УКР</span>
-        <span lang="uk">ENG</span>
-    </button>
-
     <div class="container">
-        <h1 class="main-title" data-aos="fade-down">
-            <span lang="en">Types of Cybercrime</span>
-            <span lang="uk">Види кіберзлочинів</span>
-        </h1>
-
-        <!-- Контейнер для карток злочинів -->
+        <h1 class="main-title">Types of Cybercrime</h1>
         <div class="cyber-grid" id="crimeList"></div>
-
-        <!-- Контейнер для детального перегляду -->
+        
         <div class="detail-view" id="detailView">
-            <button class="back-button" onclick="showList()">
-                <span lang="en">← Back to List</span>
-                <span lang="uk">← Назад до списку</span>
-            </button>
-            
-            <!-- Контейнер для табів -->
-            <div class="cyber-tabs"></div>
-
+            <button class="back-button" onclick="showList()">← Back to List</button>
+            <div class="cyber-tabs" id="crimeTabs"></div>
             <div class="detail-container">
                 <img src="" alt="" class="detail-image" id="detailImage">
                 <div class="detail-content" id="detailContent"></div>
@@ -51,6 +34,6 @@
             offset: 100
         });
     </script>
-    <script type="module" src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
