@@ -2,13 +2,15 @@
     display: none;
     min-height: 100vh;
     background: white;
+    padding: 15px;
+    margin: 15px;
 }
 
 .detail-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .detail-image {
@@ -20,7 +22,7 @@
 }
 
 .detail-content {
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .cyber-tabs {
@@ -38,6 +40,7 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin: 1rem;
 }
 
 .tab-button:hover,
