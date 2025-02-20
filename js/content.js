@@ -3,7 +3,6 @@ const content = {
         image: "",
         title: "Malware Distribution",
         description: "Creation and distribution of malicious software designed to damage or gain unauthorized access to computer systems",
-        law: "Article 361-1 of CCU: Creation of malicious software for the purpose of its use, distribution or sale, leading to significant harm",
         tabs: {
             first: {
                 title: "First Malware Attack",
@@ -16,6 +15,10 @@ const content = {
             ukraineCurrent: {
                 title: "Recent Malware Attacks in Ukraine",
                 content: "In 2023, Ukraine faced sophisticated malware attacks targeting critical infrastructure. The most notable was the Somnia ransomware campaign, which specifically targeted the transportation and logistics sectors. The malware employed advanced encryption techniques and demanded cryptocurrency payments for data recovery."
+            },
+            legislation: {
+                title: "Legal Framework",
+                content: "PLACE YOUR COMPREHENSIVE LEGAL TEXT HERE"
             }
         }
     },
