@@ -1,140 +1,98 @@
-// main.js
-import { content } from './content.js';
-import { toggleLanguage, getCurrentLanguage } from './language.js';
+const content = {
+    malware: {
+        image: 'https://example.com/path/to/malware-image.jpg',
+        title: "Malware Distribution",
+        description: "Creation and distribution of malicious software",
+        law: "Article 361-1 of CCU: Creation of malicious software for the purpose of its use, distribution or sale",
+        tabs: {
+            first: {
+                title: "First Malware Attacks",
+                content: "The first computer virus, called 'Creeper', was created in 1971..."
+            },
+            ukraineFirst: {
+                title: "First Malware Attacks in Ukraine",
+                content: "Ukraine faced its first significant malware attacks..."
+            },
+            ukraineCurrent: {
+                title: "Current Malware Attacks on Ukraine",
+                content: "Modern malware attacks on Ukraine have become more sophisticated..."
+            }
+        }
+    },
+};
 
-let currentCrime = 0;
-let currentTab = 'first';
-
-// Функція для створення карток злочинів
-function createCrimeCards() {
-    const container = document.getElementById('crimeList');
-    
-    Object.entries(content).forEach(([crimeKey, crimeData], index) => {
-        const card = document.createElement('div');
-        card.className = 'cyber-card';
-        card.setAttribute('data-aos', 'fade-up');
-        card.setAttribute('data-aos-delay', index * 100);
-        card.onclick = () => showDetail(index);
-
-        card.innerHTML = `
-            <img src="${crimeData.image}" alt="${crimeData.card.en.title}" class="card-image">
-            <div class="card-content">
-                <h3 class="card-title" lang="en">${crimeData.card.en.title}</h3>
-                <h3 class="card-title" lang="uk">${crimeData.card.uk.title}</h3>
-                <p class="card-description" lang="en">${crimeData.card.en.description}</p>
-                <p class="card-description" lang="uk">${crimeData.card.uk.description}</p>
-                <div class="law-reference">
-                    <p lang="en">${crimeData.card.en.law}</p>
-                    <p lang="uk">${crimeData.card.uk.law}</p>
-                </div>
-            </div>
-        `;
-
-        container.appendChild(card);
-    });
+function createCard(id, data) {
+    const card = document.createElement('div');
+    card.className = 'cyber-card';
+    card.innerHTML = `
+        <img src="${data.image}" alt="${data.title}" class="card-image">
+        <div class="card-content">
+            <h3 class="card-title">${data.title}</h3>
+            <p class="card-description">${data.description}</p>
+            <div class="law-reference">${data.law}</div>
+        </div>
+    `;
+    card.addEventListener('click', () => showDetail(id));
+    return card;
 }
 
-// Функція для створення табів
-function createDetailTabs() {
-    const tabsContainer = document.querySelector('.cyber-tabs');
-    const tabs = [
-        { id: 'first', en: 'First Attacks', uk: 'Перші атаки' },
-        { id: 'ukraine-first', en: 'First Attacks in Ukraine', uk: 'Перші атаки в Україні' },
-        { id: 'ukraine-current', en: 'Current Attacks on Ukraine', uk: 'Сучасні атаки на Україну' }
-    ];
-
-    tabsContainer.innerHTML = tabs.map(tab => `
-        <button class="tab-button ${tab.id === 'first' ? 'active' : ''}" 
-                data-tab="${tab.id}" 
-                onclick="window.changeTab('${tab.id}')">
-            <span lang="en">${tab.en}</span>
-            <span lang="uk">${tab.uk}</span>
-        </button>
-    `).join('');
-}
-
-function showDetail(index) {
-    const crimeList = document.getElementById('crimeList');
+function showDetail(id) {
+    const data = content[id];
     const detailView = document.getElementById('detailView');
+    const detailImage = document.getElementById('detailImage');
+    const crimeTabs = document.getElementById('crimeTabs');
     
-    crimeList.style.opacity = '0';
-    crimeList.style.transform = 'translateY(-20px)';
+    detailImage.src = data.image;
+    detailImage.alt = data.title;
+    
+    crimeTabs.innerHTML = '';
+    Object.entries(data.tabs).forEach(([tabId, tabData], index) => {
+        const tabButton = document.createElement('button');
+        tabButton.className = `tab-button ${index === 0 ? 'active' : ''}`;
+        tabButton.textContent = tabData.title;
+        tabButton.addEventListener('click', () => switchTab(id, tabId));
+        crimeTabs.appendChild(tabButton);
+    });
+    
+    switchTab(id, Object.keys(data.tabs)[0]);
+    detailView.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function switchTab(crimeId, tabId) {
+    const data = content[crimeId].tabs[tabId];
+    const detailContent = document.getElementById('detailContent');
+    const tabButtons = document.querySelectorAll('.tab-button');
+    
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+        if (button.textContent === data.title) {
+            button.classList.add('active');
+        }
+    });
+    
+    detailContent.style.opacity = '0';
+    detailContent.style.transform = 'translateY(10px)';
     
     setTimeout(() => {
-        crimeList.style.display = 'none';
-        detailView.style.display = 'block';
-        
-        detailView.offsetHeight; // Trigger reflow
-        
-        detailView.classList.add('active');
-        currentCrime = index;
-        updateDetailContent();
+        detailContent.innerHTML = `
+            <h2>${data.title}</h2>
+            <div class="tab-content active">${data.content}</div>
+        `;
+        detailContent.style.opacity = '1';
+        detailContent.style.transform = 'translateY(0)';
     }, 300);
 }
 
 function showList() {
-    const crimeList = document.getElementById('crimeList');
     const detailView = document.getElementById('detailView');
-    
     detailView.classList.remove('active');
-    
-    setTimeout(() => {
-        detailView.style.display = 'none';
-        crimeList.style.display = 'grid';
-        
-        crimeList.offsetHeight; // Trigger reflow
-        
-        crimeList.style.opacity = '1';
-        crimeList.style.transform = 'translateY(0)';
-    }, 300);
+    document.body.style.overflow = '';
 }
 
-function changeTab(tab) {
-    currentTab = tab;
-    updateDetailContent();
-    
-    document.querySelectorAll('.tab-button').forEach(button => {
-        button.classList.remove('active');
-    });
-    document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
-}
-
-function updateDetailContent() {
-    const crimes = Object.keys(content);
-    const crime = crimes[currentCrime];
-    
-    let tabContent;
-    switch(currentTab) {
-        case 'first':
-            tabContent = content[crime].first;
-            break;
-        case 'ukraine-first':
-            tabContent = content[crime].ukraineFirst;
-            break;
-        case 'ukraine-current':
-            tabContent = content[crime].ukraineCurrent;
-            break;
-    }
-
-    const lang = getCurrentLanguage();
-    document.getElementById('detailImage').src = content[crime].image;
-    document.getElementById('detailContent').innerHTML = `
-        <h2>${tabContent[lang].title}</h2>
-        <p>${tabContent[lang].content}</p>
-        <div class="law-reference">
-            <p>${content[crime].card[lang].law}</p>
-        </div>
-    `;
-}
-
-// Ініціалізація при завантаженні сторінки
 document.addEventListener('DOMContentLoaded', () => {
-    createCrimeCards();
-    createDetailTabs();
+    const crimeList = document.getElementById('crimeList');
+    Object.entries(content).forEach(([id, data]) => {
+        crimeList.appendChild(createCard(id, data));
+    });
 });
-
-// Експорт функцій для використання в HTML
-window.showDetail = showDetail;
-window.showList = showList;
-window.changeTab = changeTab;
-window.toggleLanguage = toggleLanguage;
