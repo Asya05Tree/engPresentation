@@ -1,26 +1,3 @@
-const content = {
-    malware: {
-        image: 'https://example.com/path/to/malware-image.jpg',
-        title: "Malware Distribution",
-        description: "Creation and distribution of malicious software",
-        law: "Article 361-1 of CCU: Creation of malicious software for the purpose of its use, distribution or sale",
-        tabs: {
-            first: {
-                title: "First Malware Attacks",
-                content: "The first computer virus, called 'Creeper', was created in 1971..."
-            },
-            ukraineFirst: {
-                title: "First Malware Attacks in Ukraine",
-                content: "Ukraine faced its first significant malware attacks..."
-            },
-            ukraineCurrent: {
-                title: "Current Malware Attacks on Ukraine",
-                content: "Modern malware attacks on Ukraine have become more sophisticated..."
-            }
-        }
-    },
-};
-
 function createCard(id, data) {
     const card = document.createElement('div');
     card.className = 'cyber-card';
@@ -29,7 +6,6 @@ function createCard(id, data) {
         <div class="card-content">
             <h3 class="card-title">${data.title}</h3>
             <p class="card-description">${data.description}</p>
-            <div class="law-reference">${data.law}</div>
         </div>
     `;
     card.addEventListener('click', () => showDetail(id));
@@ -55,6 +31,7 @@ function showDetail(id) {
     });
     
     switchTab(id, Object.keys(data.tabs)[0]);
+    
     detailView.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
