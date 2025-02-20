@@ -16,10 +16,6 @@ const content = {
                 title: "Recent Malware Attacks in Ukraine",
                 content: "In 2023, Ukraine faced sophisticated malware attacks targeting critical infrastructure. The most notable was the Somnia ransomware campaign, which specifically targeted the transportation and logistics sectors. The malware employed advanced encryption techniques and demanded cryptocurrency payments for data recovery."
             },
-            legislation: {
-                title: "Legal Framework",
-                content: "PLACE YOUR COMPREHENSIVE LEGAL TEXT HERE"
-            }
         }
     },
 
@@ -27,7 +23,6 @@ const content = {
         image: "",
         title: "DDoS Attacks",
         description: "Distributed Denial of Service attacks that flood systems, networks, or servers with traffic to exhaust resources and bandwidth",
-        law: "Article 361 of CCU: Unauthorized interference with the operation of computers, automated systems, computer networks or telecommunications networks",
         tabs: {
             first: {
                 title: "First DDoS Attack",
@@ -48,7 +43,6 @@ const content = {
         image: "",
         title: "Ransomware Attacks",
         description: "Malicious software that encrypts victims' files, with attackers demanding ransom for decryption",
-        law: "Articles 361-1, 189 of CCU: Creation of malicious software combined with extortion",
         tabs: {
             first: {
                 title: "First Ransomware Attack",
@@ -69,7 +63,6 @@ const content = {
         image: "",
         title: "Phishing Attacks",
         description: "Fraudulent attempts to obtain sensitive information by disguising as a trustworthy entity",
-        law: "Article 190 of CCU: Fraud committed using electronic computing devices, systems, and computer networks",
         tabs: {
             first: {
                 title: "First Phishing Attack",
@@ -90,7 +83,6 @@ const content = {
         image: "",
         title: "Identity Theft",
         description: "Unauthorized acquisition and use of personal identification information for fraudulent purposes",
-        law: "Articles 190, 361-2 of CCU: Fraud through unauthorized access to personal data and its illegal collection",
         tabs: {
             first: {
                 title: "First Digital Identity Theft",
@@ -111,7 +103,6 @@ const content = {
         image: "",
         title: "Cryptojacking",
         description: "Unauthorized use of computing resources for cryptocurrency mining",
-        law: "Article 361 of CCU: Unauthorized interference with the operation of computers, automated systems, and networks",
         tabs: {
             first: {
                 title: "First Cryptojacking Attack",
@@ -132,7 +123,6 @@ const content = {
         image: "",
         title: "Social Engineering",
         description: "Psychological manipulation techniques used to deceive users into revealing confidential information",
-        law: "Article 190 of CCU: Fraud through deception or abuse of trust",
         tabs: {
             first: {
                 title: "First Social Engineering Attack",
@@ -153,7 +143,6 @@ const content = {
         image: "",
         title: "Data Theft",
         description: "Unauthorized access and extraction of sensitive or confidential data from computer systems",
-        law: "Article 361-2 of CCU: Unauthorized sale or dissemination of restricted information stored in computers",
         tabs: {
             first: {
                 title: "First Major Data Theft",
